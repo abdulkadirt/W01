@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using W02.Models;
 
 namespace W02.Controllers
 {
@@ -10,35 +11,44 @@ namespace W02.Controllers
         }
 
         [HttpGet]
-        public IActionResult About(int id) 
+        public IActionResult About(int id)
         {
+            Student student;
 
             if (id ==1 )
             {
-                 ViewBag.id = id;
-                ViewBag.firstName = "Alican";
-                ViewBag.lastName = "Cesur";
-                ViewBag.department = "Math Eng.";
+                student = new Student
+                {
+                    Id = id,
+                    FirstName = "Alican",
+                    LastName = "Cesur",
+                    Department = "Math Eng."
+                };
+
             }
             else if (id ==2)
             {
-                ViewBag.id = id;
-                ViewBag.firstName = "Murtaza";
-                ViewBag.lastName = "Kızıl";
-                ViewBag.department = "Math Eng.";
+                student = new Student
+                {
+                    Id = id,
+                    FirstName = "Murtaza",
+                    LastName = "Kızıl",
+                    Department = "Math Eng."
+                };
             }
             else
             {
+                student = new Student
                 {
-                    ViewBag.id = -1;
-                    ViewBag.firstName = "No data found";
-                    ViewBag.lastName = "No data found";
-                    ViewBag.department = "No data found";
+                    Id = -1,
+                    FirstName = "No Data",
+                    LastName = "No Data",
+                    Department = "No Data"
 
-                }
+                };
             }
 
-            return View();
+            return View(student);
         }
 
         [HttpPost]

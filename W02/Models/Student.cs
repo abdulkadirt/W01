@@ -9,7 +9,7 @@
 
         public string? LastName { get; set; }
 
-        public string? Departmet { get; set; }
+        public string? Department { get; set; }
 
 
     }
