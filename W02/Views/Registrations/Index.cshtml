@@ -1,0 +1,51 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+<h1>
+    Students registration Operations
+</h1>
+<h1>
+    Student List
+</h1>
+
+<a href="/Registrations/Create">Create New</a>
+
+<table class="table">
+    <tr>
+        <th>Id</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Department</th>
+        <th>About</th>
+    </tr>
+    @*burası tablomun kolon isimleri olacak. 
+        tr = table row, yani tablo satırını ifade ediyor.
+        td = table data , tablodaki veriler için. Normal ince yazıyor.
+        th = table header , yani tablodaki kolon başlıkları için. biraz kalın yazıyor.
+    *@
+    <tr>
+        <td>1</td>
+        <td>Alican</td>
+        <td>Cesur</td>
+        <td>Math Eng.</td>
+        <td>
+            <a href="/Registrations/About?id=1">About Me</a>
+        </td>
+    </tr>
+
+    <tr>
+        <td>2</td>
+        <td>Murtaza</td>
+        <td>Kızıl</td>
+        <td>Math Eng.</td>
+        <td>
+            <a href="/Registrations/About?id=2">About Me</a>
+        </td>
+
+    </tr>
+
+</table>
+
